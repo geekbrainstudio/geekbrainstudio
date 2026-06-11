@@ -2,6 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import AboutShapes from "./AboutShapes";
 
 export default function About() {
   const ref = useRef<HTMLDivElement>(null);
@@ -28,14 +29,16 @@ export default function About() {
   return (
     <section
       id="about"
-      className="py-32 lg:py-40 px-6 lg:px-8 max-w-6xl mx-auto"
+      className="relative py-32 lg:py-40 px-6 lg:px-8 max-w-6xl mx-auto overflow-hidden"
     >
+      {/* Animated code symbols background */}
+      <AboutShapes />
       <motion.div
         ref={ref}
         variants={containerVariants}
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
-        className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start"
+        className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start relative z-10"
       >
         {/* Left: Label */}
         <motion.div variants={itemVariants} className="lg:col-span-3">

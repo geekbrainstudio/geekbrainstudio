@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import HeroShapes from "./HeroShapes";
 
 const ease = [0.25, 0.1, 0.25, 1] as [number, number, number, number];
 
@@ -25,12 +26,15 @@ const itemVariants = {
 
 export default function Hero() {
   return (
-    <section className="min-h-screen flex flex-col justify-center pt-16 px-6 lg:px-8 max-w-6xl mx-auto">
+    <section className="min-h-screen flex flex-col justify-center pt-16 px-6 lg:px-8 max-w-6xl mx-auto relative">
+      {/* Animated B&W geometric shapes */}
+      <HeroShapes />
+
       <motion.div
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="max-w-4xl"
+        className="max-w-4xl relative z-10"
       >
         {/* Label */}
         <motion.div variants={itemVariants} className="mb-10">
@@ -103,7 +107,7 @@ export default function Hero() {
         <motion.div
           animate={{ y: [0, 6, 0] }}
           transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
-          className="w-px h-8 bg-gradient-to-b from-[#a3a3a3] to-transparent"
+          className="w-px h-8 bg-linear-to-b from-[#a3a3a3] to-transparent"
         />
       </motion.div>
     </section>
