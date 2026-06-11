@@ -34,6 +34,13 @@ export default function Footer() {
           >
             Contact
           </a>
+          <span className="text-[#e5e5e5]">·</span>
+          <Link
+            href="/privacy-policy/website"
+            className="text-sm text-[#a3a3a3] hover:text-black transition-colors"
+          >
+            Privacy Policy
+          </Link>
         </div>
       </div>
     </footer>
